@@ -311,6 +311,65 @@ infin_car.info();
 // -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
 // ==============================================
 // -створити класс попелюшка з полями ім'я, вік, розмір ноги
+
+class Humen {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    shower_obj() {
+        for (let key in this) {
+            console.log(key + ' : ' + this[key]);
+        }
+        console.log('------------------------------');
+    }
+}
+
+class CinderellaS extends Humen {
+
+    constructor(name, age, foot_size) {
+        super(name, age);
+        this.foot_size = foot_size;
+    }
+}
+
+// --Створити 10 попелюшок , покласти їх в масив
+let cinderella_1 = new CinderellaS('cinderella_1', 12, 36);
+let cinderella_2 = new CinderellaS('cinderella_2', 22, 35);
+let cinderella_3 = new CinderellaS('cinderella_3', 32, 37);
+let cinderella_4 = new CinderellaS('cinderella_4', 14, 34);
+let cinderella_5 = new CinderellaS('cinderella_5', 15, 38);
+let cinderella_6 = new CinderellaS('cinderella_6', 16, 35);
+let cinderella_7 = new CinderellaS('cinderella_7', 17, 39);
+let cinderella_8 = new CinderellaS('cinderella_8', 27, 36);
+let cinderella_9 = new CinderellaS('cinderella_9', 37, 35);
+let cinderella_10 = new CinderellaS('cinderella_10', 38, 36);
+
+
+let oll_cinderellas = [new CinderellaS('cinderella_1', 12, 36), new CinderellaS('cinderella_2', 22, 35), new CinderellaS('cinderella_3', 32, 37), new CinderellaS('cinderella_4', 14, 34), new CinderellaS('cinderella_5', 15, 38), new CinderellaS('cinderella_6', 16, 35), new CinderellaS('cinderella_7', 17, 39), new CinderellaS('cinderella_8', 27, 36), new CinderellaS('cinderella_9', 37, 35), new CinderellaS('cinderella_10', 38, 36)];
+
+// --Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+
+class Prince extends Humen {
+    constructor(name, age, shoe_size) {
+        super(name, age)
+        this.shoe_size = shoe_size;
+    }
+
+}
+let prince_1 = new Prince('prince_1', 25, 36);
+
+// -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
+
+for (let cind of oll_cinderellas) {
+    if (cind.foot_size === prince_1.shoe_size) {
+        cind.shower_obj();
+        prince_1.shower_obj();
+    }
+}
+
+
+
 /* 
 class CinderellaS {
 
@@ -376,6 +435,10 @@ for (let cind of oll_cinderellas) {
 // -- функція повинна приймати масив попелюшок, та шукає ту котра йому підходить
 // ==============================================
 
+
+/* 
+
+
 function Cinderellas(name, age, foot_size) {
     this.name = name;
     this.age = age;
@@ -423,4 +486,4 @@ let prince_1 = new Prince('prince_1', 25, 36, function(oll_cinderellas) {
     }
 
 });
-prince_1.serch(oll_cinderellas);
+prince_1.serch(oll_cinderellas); */
